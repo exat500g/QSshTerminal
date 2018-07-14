@@ -28,8 +28,8 @@
 #pragma once
 
 // Own includes
-#include "filter.h"
-#include "character.h"
+#include "Filter.h"
+#include "Character.h"
 class ScreenWindow;
 
 // Qt

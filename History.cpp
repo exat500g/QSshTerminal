@@ -26,7 +26,7 @@
 */
 
 // Own includes
-#include "history.h"
+#include "History.h"
 
 // System includes
 #include <iostream>

@@ -29,7 +29,7 @@
 #pragma once
 
 // Own includes
-#include "character.h"
+#include "Character.h"
 
 // Qt includes
 #include <QList>

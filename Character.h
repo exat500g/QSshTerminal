@@ -30,7 +30,7 @@
 #pragma once
 
 // Own includes
-#include "charactercolor.h"
+#include "CharacterColor.h"
 
 // Qt includes
 #include <QHash>

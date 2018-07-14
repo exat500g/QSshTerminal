@@ -25,8 +25,8 @@
 */
 
 // Own includes
-#include "screenwindow.h"
-#include "screen.h"
+#include "ScreenWindow.h"
+#include "Screen.h"
 
 // Qt includes
 #include <QtDebug>

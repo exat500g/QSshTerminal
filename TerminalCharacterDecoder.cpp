@@ -27,7 +27,7 @@
 */
 
 // Own includes
-#include "terminalcharacterdecoder.h"
+#include "TerminalCharacterDecoder.h"
 #include "konsole_wcwidth.h"
 
 // Qt includes

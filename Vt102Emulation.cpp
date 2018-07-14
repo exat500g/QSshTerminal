@@ -28,9 +28,9 @@
 */
 
 // Own includes
-#include "vt102emulation.h"
-#include "keyboardtranslator.h"
-#include "screen.h"
+#include "Vt102Emulation.h"
+#include "KeyboardTranslator.h"
+#include "Screen.h"
 
 // this allows konsole to be compiled without XKB and XTEST extensions
 // even though it might be available on a particular system.

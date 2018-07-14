@@ -27,7 +27,7 @@
 #pragma once
 
 // Own includes
-#include "character.h"
+#include "Character.h"
 class Screen;
 
 // Qt includes

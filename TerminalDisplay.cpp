@@ -28,11 +28,11 @@
 */
 
 // Own includes
-#include "terminaldisplay.h"
-#include "filter.h"
+#include "TerminalDisplay.h"
+#include "Filter.h"
 #include "konsole_wcwidth.h"
-#include "screenwindow.h"
-#include "terminalcharacterdecoder.h"
+#include "ScreenWindow.h"
+#include "TerminalCharacterDecoder.h"
 
 // Qt includes
 #include <QApplication>

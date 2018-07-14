@@ -27,11 +27,11 @@
 */
 
 // Own includes
-#include "terminalemulation.h"
-#include "keyboardtranslator.h"
-#include "screen.h"
-#include "terminalcharacterdecoder.h"
-#include "screenwindow.h"
+#include "TerminalEmulation.h"
+#include "KeyboardTranslator.h"
+#include "Screen.h"
+#include "TerminalCharacterDecoder.h"
+#include "ScreenWindow.h"
 
 // System includes
 #include <assert.h>

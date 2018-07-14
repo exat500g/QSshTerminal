@@ -28,7 +28,7 @@
 #pragma once
 
 // Own includes
-#include "character.h"
+#include "Character.h"
 
 // Qt
 #include <QBitRef>

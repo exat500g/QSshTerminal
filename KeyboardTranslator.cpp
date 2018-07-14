@@ -27,7 +27,7 @@
 */
 
 // Own includes
-#include "keyboardtranslator.h"
+#include "KeyboardTranslator.h"
 
 // System includes
 #include <ctype.h>

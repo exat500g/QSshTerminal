@@ -25,8 +25,8 @@
 */
 
 // Own includes
-#include "filter.h"
-#include "terminalcharacterdecoder.h"
+#include "Filter.h"
+#include "TerminalCharacterDecoder.h"
 #include "konsole_wcwidth.h"
 
 // System includes

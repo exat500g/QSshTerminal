@@ -30,8 +30,8 @@
 #pragma once
 
 // Own includes
-#include "character.h"
-#include "history.h"
+#include "Character.h"
+#include "History.h"
 #define MODE_Origin    0
 #define MODE_Wrap      1
 #define MODE_Insert    2

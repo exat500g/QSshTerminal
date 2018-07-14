@@ -30,8 +30,8 @@
 #pragma once
 
 // Own includes
-#include "terminalemulation.h"
-#include "screen.h"
+#include "TerminalEmulation.h"
+#include "Screen.h"
 
 #define MODE_AppScreen       (MODES_SCREEN+0)   // Mode #1
 #define MODE_AppCuKeys       (MODES_SCREEN+1)   // Application cursor keys (DECCKM)

@@ -4,9 +4,8 @@
 #include "ScreenWindow.h"
 #include <QProcess>
 #include <QDebug>
-#include <QSsh/sshconnection.h>
-#include <QSsh/sshremoteprocess.h>
-#include "shell.h"
+#include <QSsh>
+#include "Shell.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,8 +14,8 @@ int main(int argc, char *argv[])
     QSsh::SshConnectionParameters parameters;
     parameters.authenticationType=QSsh::SshConnectionParameters::AuthenticationType::AuthenticationTypePassword;
     parameters.password="123";
-    parameters.host="192.168.238.130";
-    parameters.userName="exat500g";
+    parameters.host="127.0.0.1";
+    parameters.userName="czr";
     parameters.port=22;
     parameters.timeout=10;
 
@@ -61,7 +60,7 @@ int main(int argc, char *argv[])
     display->setTerminalSizeHint(true);
     display->setTerminalSizeStartup(true);
     display->setRandomSeed(0);
-    display->setVTFont(QFont("Consolas",10));
+    display->setVTFont(QFont("monospace",10));
     //display->setColorTable(whiteonblack_color_table);
     display->show();
     display->setScrollBarPosition(TerminalDisplay::ScrollBarRight);

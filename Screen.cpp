@@ -28,9 +28,9 @@
    */
 
 // Own includes
-#include "screen.h"
+#include "Screen.h"
 #include "konsole_wcwidth.h"
-#include "terminalcharacterdecoder.h"
+#include "TerminalCharacterDecoder.h"
 
 // Standard includes
 #include <stdio.h>
@@ -717,7 +717,7 @@ void Screen::resetScrolledLines()
 void Screen::scrollUp(int n)
 {
     if (n == 0) n = 1; // Default
-    if (_topMargin == 0) addHistLine(); // history.history
+    if (_topMargin == 0) addHistLine(); // History.history
     scrollUp(_topMargin, n);
 }
 
