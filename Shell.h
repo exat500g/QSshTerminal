@@ -49,8 +49,10 @@ public:
     ~Shell();
 
     void run();
+    bool isShellStarted();
 signals:
     void remoteStdout(QByteArray data);
+    void shellStarted();
 public slots:
     void writeRemote(QByteArray data);
 
@@ -61,7 +63,6 @@ private slots:
     void handleRemoteStderr();
     void handleShellMessage(const QString &message);
     void handleChannelClosed(int exitStatus);
-    void handleShellStarted();
 
 private:
     QSsh::SshConnection *m_connection;

@@ -96,7 +96,7 @@ const ColorEntry base_color_table[TABLE_COLORS] =
 {
         // Fixme: could add faint colors here, also.
         // normal
-        ColorEntry(QColor(0x00,0x00,0x00), 0), ColorEntry( QColor(0xB2,0xB2,0xB2), 1), // Dfore, Dback
+        ColorEntry(QColor(0x00,0x00,0x00), 0), ColorEntry( QColor(0xFF,0xFF,0xFF), 1), // Dfore, Dback
         ColorEntry(QColor(0x00,0x00,0x00), 0), ColorEntry( QColor(0xB2,0x18,0x18), 0), // Black, Red
         ColorEntry(QColor(0x18,0xB2,0x18), 0), ColorEntry( QColor(0xB2,0x68,0x18), 0), // Green, Yellow
         ColorEntry(QColor(0x18,0x18,0xB2), 0), ColorEntry( QColor(0xB2,0x18,0xB2), 0), // Blue, Magenta

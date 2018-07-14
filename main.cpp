@@ -6,15 +6,18 @@
 #include <QDebug>
 #include <QSsh>
 #include "Shell.h"
+#include <QLoggingCategory>
+#include "ColorScheme.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QLoggingCategory::setFilterRules("qtc.ssh.debug=false");
 
     QSsh::SshConnectionParameters parameters;
     parameters.authenticationType=QSsh::SshConnectionParameters::AuthenticationType::AuthenticationTypePassword;
     parameters.password="123";
-    parameters.host="127.0.0.1";
+    parameters.host="192.168.1.102";
     parameters.userName="czr";
     parameters.port=22;
     parameters.timeout=10;
@@ -45,7 +48,10 @@ int main(int argc, char *argv[])
     QObject::connect( display , &TerminalDisplay::sendStringToEmu,[=](const char* str){
         emulation->sendString(str);
     });
-    QObject::connect(display,&TerminalDisplay::changedContentSizeSignal,[&](){
+    QTimer *resizeTimer=new QTimer(display);
+    resizeTimer->setSingleShot(true);
+    resizeTimer->setInterval(100);
+    QObject::connect(resizeTimer,&QTimer::timeout,[&](){
         TerminalDisplay* view=display;
         int minLines = -1;
         int minColumns = -1;
@@ -56,12 +62,16 @@ int main(int argc, char *argv[])
             emulation->setImageSize( minLines , minColumns );
         }
     });
+    QObject::connect(display,&TerminalDisplay::changedContentSizeSignal,[&](){
+        resizeTimer->start();
+    });
     display->setScreenWindow(emulation->createWindow());
     display->setTerminalSizeHint(true);
     display->setTerminalSizeStartup(true);
     display->setRandomSeed(0);
-    display->setVTFont(QFont("monospace",10));
-    //display->setColorTable(whiteonblack_color_table);
+    QFont font("monospace",10);
+    font.setStyleHint(QFont::Monospace);
+    display->setVTFont(font);
     display->show();
     display->setScrollBarPosition(TerminalDisplay::ScrollBarRight);
     display->setUsesMouse(true);

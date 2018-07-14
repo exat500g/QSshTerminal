@@ -287,10 +287,6 @@ signals:
    */
     void stateSet(int state);
 
-    /** TODO Document me */
-    void zmodemDetected();
-
-
     /**
    * Requests that the color of the text used
    * to represent the tabs associated with this

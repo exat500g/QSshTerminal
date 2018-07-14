@@ -55,6 +55,13 @@ void Shell::run()
     m_connection->connectToHost();
 }
 
+bool Shell::isShellStarted(){
+    if(m_shell){
+        return m_shell->isRunning();
+    }
+    return false;
+}
+
 void Shell::handleConnectionError()
 {
     std::cerr << "SSH connection error: " << qPrintable(m_connection->errorString()) << std::endl;
@@ -69,28 +76,20 @@ void Shell::handleShellMessage(const QString &message)
 void Shell::handleConnected()
 {
     m_shell = m_connection->createRemoteShell();
-//    connect(m_shell.data(), SIGNAL(started()), SLOT(handleShellStarted()));
+    connect(m_shell.data(), SIGNAL(started()), SIGNAL(shellStarted()));
     connect(m_shell.data(), SIGNAL(readyReadStandardOutput()), SLOT(handleRemoteStdout()));
     connect(m_shell.data(), SIGNAL(readyReadStandardError()), SLOT(handleRemoteStderr()));
     connect(m_shell.data(), SIGNAL(closed(int)), SLOT(handleChannelClosed(int)));
     m_shell->start();
 }
 
-void Shell::handleShellStarted()
-{
-    //QSocketNotifier * const notifier = new QSocketNotifier(0, QSocketNotifier::Read, this);
-    //connect(notifier, SIGNAL(activated(int)), SLOT(writeRemote()));
-}
-
 void Shell::handleRemoteStdout()
 {
-    //std::cout << m_shell->readAllStandardOutput().data() << std::flush;
     emit remoteStdout(m_shell->readAllStandardOutput());
 }
 
 void Shell::handleRemoteStderr()
 {
-    //std::cerr << m_shell->readAllStandardError().data() << std::flush;
     emit remoteStdout(m_shell->readAllStandardError());
 }
 
