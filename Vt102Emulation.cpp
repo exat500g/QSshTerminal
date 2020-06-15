@@ -45,7 +45,7 @@ void scrolllock_set_on();
 
 // Standard includes
 #include <stdio.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include <assert.h>
 
 // Qt includes

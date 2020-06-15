@@ -23,7 +23,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-LIBS += -lQSsh
+CONFIG(debug,debug|release):{
+    LIBS += -L$$PWD/3rdparty/QSsh/lib -lQSshd
+    INCLUDEPATH += 3rdparty/QSsh/include
+    message(includepath=$$INCLUDEPATH)
+    message(debug-build)
+}else{
+    message(release-build)
+    LIBS += -lQSsh
+}
 
 SOURCES += *.cpp
 

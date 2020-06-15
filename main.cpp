@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     QSsh::SshConnectionParameters parameters;
     parameters.authenticationType=QSsh::SshConnectionParameters::AuthenticationType::AuthenticationTypePassword;
     parameters.password="123";
-    parameters.host="192.168.1.102";
-    parameters.userName="czr";
+    parameters.host="192.168.1.2";
+    parameters.userName="exat500g";
     parameters.port=22;
     parameters.timeout=10;
 
@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
         // backend emulation must have a _terminal of at least 1 column x 1 line in size
         if ( minLines > 0 && minColumns > 0 ) {
             emulation->setImageSize( minLines , minColumns );
+            display->setSize(minColumns,minLines);
         }
     });
     QObject::connect(display,&TerminalDisplay::changedContentSizeSignal,[&](){
